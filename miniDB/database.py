@@ -178,7 +178,6 @@ class Database:
             self.tables[table_name]._insert(line.strip('\n').split(','))
 
         if self.in_transaction:
-            print("Adding table:", table_name)
             self.locked_tables.append(table_name)
         else:
             if lock_ownership:
@@ -247,7 +246,6 @@ class Database:
 
         # If there's a transaction going on it doesn't unlock the table and if there's it locks the current table
         if self.in_transaction:
-            print("Adding table:", table_name)
             self.locked_tables.append(table_name)
         else:
             if lock_ownership:
@@ -279,7 +277,6 @@ class Database:
 
         # If there's a transaction going on it doesn't unlock the table and if there's it locks the current table
         if self.in_transaction:
-            print("Adding table:",table_name)
             self.locked_tables.append(table_name)
         else:
             if lock_ownership:
@@ -425,7 +422,6 @@ class Database:
 
         # If there's a transaction going on it doesn't unlock the table and if there's it locks the current table
         if self.in_transaction:
-            print("Adding table:", table_name)
             self.locked_tables.append(table_name)
         else:
             if lock_ownership:
